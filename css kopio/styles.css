@@ -1,0 +1,28 @@
+#errorviesti {
+  color: red;
+  margin-bottom: 10px;}
+li {
+  margin-bottom: 12px;
+}
+
+li button {
+  margin-left: 10px;
+}
+
+li span {
+  margin-right: 10px;
+}
+body {
+  background-color: rgb(240, 244, 195);
+}
+main.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: rgb(255, 245, 169);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+h1{
+color: rgb(175, 205, 39);
+}
