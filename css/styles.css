@@ -13,16 +13,16 @@ li span {
   margin-right: 10px;
 }
 body {
-  background-color: rgb(240, 244, 195);
+  background-color: rgb(220, 196, 158);
 }
 main.container {
   max-width: 600px;
   margin: 60px auto;
-  background-color: rgb(75, 134, 176);
+  background-color: rgb(118, 181, 226);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 h1{
-color: rgb(43, 185, 218);
+color: rgb(15, 27, 154);
 }
