@@ -1,24 +1,15 @@
 # Projektin nimi ja tekijät
-Projektin nimi ja kaikki mukana olevat tekijät. 
-
+Todo-lista jqueryn avulla, tekijä: Oona Kärkkäinen
 ## Verkkolinkit:
-Pääset julkaistuun sovellukseen käsiksi osoitteessa https://todolistjquery.netlify.app
-
-## Työn jakautuminen 
-Miten työmäärä jaettiin? Kuka teki mitä? Miten yhteistyö sujui?
+Pääset julkaistuun sovellukseen käsiksi osoitteessa: https://todolistjquery.netlify.app
 
 ## Oma arvio työstä ja oman osaamisen kehittymisestä
-Mielestäni onnistuin...
-Parantamista olisi...
-Sovelluksesta jäi puuttumaan...
-Koen, että olen oppinut...
-Epäselväksi jäi...
-Antaisin itselleni pisteitä seuraavasti: xx/yy p
+Mielestäni onnistuin hyvin muokkaamaan ja vaihtamaan aiemmin tekemäni JavaScript-koodin jQueryn avulla toimivaksi.
+Parantamista olisi vielä siinä, että sovellukseen voisi lisätä enemmän ominaisuuksia. Esimerkiksi tehtävät voisi tallentaa selaimen muistiin, jotta ne eivät katoa sivun päivittämisen jälkeen. Lisäksi ulkoasua voisi kehittää vielä viimeistellymmäksi.
+
 
 ## Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
-Kurssi sekä lähiopetus ovat tuntuneet... 
-Oppimistani tukisi jos...
-
+Kurssilla sai tehdä paljon projekteja mitkä auttoivat hyvin itsenäisessä työskentelyssä. 
 
 ## Sisällysluettelo:
 
@@ -26,40 +17,36 @@ Oppimistani tukisi jos...
 - [Tunnetut virheet/bugit](#Tunnetut virheet/bugit)
 - [Kuvakaappaukset](#kuvakaappaukset)
 - [Teknologiat](#teknologiat)
-- [Asennus](#asennus)
-- [Lähestymistapa](#lähestymistapa)
 - [Kiitokset](#kiitokset)
 - [Lisenssi](#lisenssi)
 
 ## Tietoja sovelluksesta
-[Projektin nimi] on sovellus, joka ...
+Todo-lista jQueryllä on yksinkertainen tehtävälistasovellus. Sovelluksen avulla käyttäjä voi kirjoittaa uuden tehtävän tekstikenttään ja lisätä sen listalle. 
+Sovelluksessa on myös lomakkeen tarkistus. Tyhjää tehtävää ei voi lisätä, ja liian lyhyestä tehtävästä näytetään virheilmoitus.
 
 ## Tunnetut virheet/bugit
-Kerro jos tiedät sovelluksessa olevan jotain, mikä ei toimi tai toimii heikosti
+Tehtävät eivät tallennu selaimen muistiin.
 
 ## Kuvakaappaukset
-Lisää tähän vähintään yksi kuvakaappaus toimivasta sovelluksesta  
-`![Kirjoittaminen](https://unsplash.com/photos/VBPzRgd7gfc)`
 
-Kuva: [Kelly Sikkema](https://unsplash.com/@kellysikkema)
-
+![Kuvakaappaus Todo-listasovelluksesta](imagines/Kuva%208.6.2026%20klo%2019.32.jpeg)
 ## Teknologiat
-Kuvaa, mitä teknologioita käytettiin ja mikä oli niiden rooli projektissasi.  
-Käytin seuraavia teknologioita: `html`, `css`, ...
+Projektissa käytettiin seuraavia teknologioita:
 
-## Asennus
-Kirjoita lyhyet ohjeet sovelluksen käynnistämiseen ja käyttöön. Esimerkiksi:  
-- lataa kaikki tiedostot ja avaa index.html selaimessasi  
-- lataa tai kloonaa repositorio  
-- suorita `npm install`  
-- ...
+HTML: Sivun rakenteen tekemiseen.
+- CSS Oman ulkoasun ja tyylien muokkaamiseen.
+- Bootstrap: Painikkeiden, lomakkeen ja yleisen ulkoasun parantamiseen.
+- jQuery: Käyttäjän toimintojen kuunteluun ja sivun sisällön muokkaamiseen.
+- Netlify: Sovelluksen julkaisemiseen verkossa.
+
 
 ## Kiitokset
-Lista lähteistä ja esimerkeistä, joita käytit projektin aikana. Mainitse myös, jos käytit ChatGPT:tä tai muita tekoälytyökaluja koodauksen aikana ja kerro, miten ne auttoivat sinua.  
-- [John Doe](johndoe.com)  
-- [Beginners guide to BEM](link-goes-here.com)  
+- Kurssimateriaali: Web-sovelluksia JavaScriptin avulla
+- Bootstrap-dokumentaatio
+- jQuery-dokumentaatio
+- Käytin ChatGPTä projektin aikana apuna koodin ymmärtämisessä sekä virheiden selvittämisessä. 
 
 ## Lisenssi
-Valitse projektille lisenssi seuraamalla tätä [opasta](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
+MIT License
 
-Esimerkki: MIT-lisenssi @ [tekijä](author.com)
+Copyright (c) 2026 Oona Sofia 
