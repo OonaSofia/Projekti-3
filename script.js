@@ -1,72 +1,83 @@
 // Kun sivu on latautunut, tämä koodi käynnistyy
 $(document).ready(function () {
-
-// Kuunnellaan lomakkeen lähetystä jQueryllä
+  // Kuunnellaan lomakkeen lähetystä jQueryllä
   $("#todoForm").submit(function (e) {
-   e.preventDefault()
-    
-    
-// Nollataan aikaisemmat virheet
-  $("#errorviesti").text("");
-  $("#task").css("border", "");
+    e.preventDefault();
 
-// Haetaan käyttäjän kirjoittama tehtävä
-let tehtava = $("#task").val().trim();
-let valid = true;
+    // Nollataan aikaisemmat virheet
+    $("#errorviesti").text("");
+    $("#task").css("border", "");
 
-// Tarkistetaan, että kenttä ei ole tyhjä tai liian lyhyt
-if (tehtava === "") {
-$("#task").css("border", "2px solid red");
-$("#errorviesti").text("Kenttä ei saa olla tyhjä!");
-valid = false;
+    // Haetaan käyttäjän kirjoittama tehtävä
+    let tehtava = $("#task").val().trim();
+    let valid = true;
+
+    // Tarkistetaan, että kenttä ei ole tyhjä tai liian lyhyt
+    if (tehtava === "") {
+      $("#task").css("border", "2px solid red");
+      $("#errorviesti").text("Kenttä ei saa olla tyhjä!");
+      valid = false;
+    } else if (tehtava.length < 3) {
+      $("#task").css("border", "2px solid red");
+      $("#errorviesti").text("Tehtävän pitää olla vähintään 3 merkkiä!");
+      valid = false;
     }
 
-  
-else if (tehtava.length < 3) {
-$("#task").css("border", "2px solid red");
-$("#errorviesti").text("Tehtävän pitää olla vähintään 3 merkkiä!");
-valid = false;
+    // Jos tarkistus epäonnistuu, tehtävää ei lisätä listaan
+    if (!valid) {
+      return;
     }
 
-// Jos tarkistus epäonnistuu, tehtävää ei lisätä listaan
-if (!valid) {
-    return;
-  }
+    //uusi listaelementti jQueryllä
+    let uusiTehtava = $("<li></li>");
+    uusiTehtava.addClass(
+      "list-group-item d-flex justify-content-between align-items-center",
+    );
 
-//uusi listaelementti jQueryllä
-let uusiTehtava = $("<li></li>");
-uusiTehtava.addClass("list-group-item d-flex justify-content-between align-items-center");
+    //tehtävän teksti
+    let tehtavaTeksti = $("<span></span>");
+    tehtavaTeksti.text(tehtava);
 
-//tehtävän teksti
-let tehtavaTeksti = $("<span></span>");
-tehtavaTeksti.text(tehtava);
+    //Napin alue
+    let nappiAlue = $("<div></div>");
 
-//Napin alue
-let nappiAlue = $("<div></div>");
+    //Tehty-nappi
+    let tehtyNappi = $("<button></button>");
+    tehtyNappi.text("Tehty");
+    tehtyNappi.addClass("btn btn-success btn-sm ms-2");
 
+    // Poista-nappi
+    let poistaNappi = $("<button></button>");
+    poistaNappi.text("Poista");
+    poistaNappi.addClass("btn btn-danger btn-sm ms-2");
 
-//Tehty-nappi
-let tehtyNappi = $("<button></button>");
-tehtyNappi.text("Tehty");
-tehtyNappi.addClass("btn btn-success btn-sm ms-2");
-
-// Poista-nappi
-let poistaNappi = $("<button></button>");
-poistaNappi.text("Poista");
-poistaNappi.addClass("btn btn-danger btn-sm ms-2");
-
-
-//Tehvän yliviivaus
-tehtyNappi.click(function () {
-tehtavaTeksti.css("text-decoration", "line-through");
+    //Tehvän yliviivaus
+    tehtyNappi.click(function () {
+      tehtavaTeksti.css("text-decoration", "line-through");
     });
 
+    // Kun Poista-nappia painetaan, tehtävä poistetaan
+    poistaNappi.click(function () {
+      uusiTehtava.fadeOut(300, function () {
+        uusiTehtava.remove();
+      });
+    });
+
+    // Lisätään napit nappialueeseen
+    nappiAlue.append(tehtyNappi);
+    nappiAlue.append(poistaNappi);
+
+    // Lisätään teksti ja napit listaelementtiin
+    uusiTehtava.append(tehtavaTeksti);
+    uusiTehtava.append(nappiAlue);
 
     // Lisätään uusi tehtävä listaan
-  document.getElementById("list").appendChild(uusiTehtava);
+    $("#list").append(uusiTehtava);
 
+    // Näytetään uusi tehtävä pienellä efektillä
+    uusiTehtava.hide().fadeIn(300);
 
-  // Tyhjentää syöttökentän uuden lisäyksen jälkeen
-
-  document.getElementById("task").value = "";
-}
+    // Tyhjentää input-kentän
+    $("#task").val("");
+  });
+});
