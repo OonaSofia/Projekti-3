@@ -1,14 +1,18 @@
-// Estetää lomakkeen "normaali" lähetys, tarkistetaan tiedot itse JavaScriptillä
-function validateForm(e) {
-  e.preventDefault();
+// Kun sivu on latautunut, tämä koodi käynnistyy
+$(document).ready(function () {
 
+// Kuunnellaan lomakkeen lähetystä jQueryllä
+  $("#todoForm").submit(function (e) {
+   e.preventDefault()
+    
+    
+// Nollataan aikaisemmat virheet
+  $("#errorviesti").text("");
+  $("#task").css("border", "");
 
-  // Nollataan aikaisemmat virheet: errorviesti ja punaiset reunat 
-  document.getElementById("errorviesti").innerText = "";
-  document.getElementById("task").style.border = "";
-
-  let tehtava = document.getElementById("task").value.trim();
-  let valid = true;
+// Haetaan käyttäjän kirjoittama tehtävä
+let tehtava = $("#task").val().trim();
+let valid = true;
 
     // Tarkistetaan, että kenttä ei ole tyhjä tai liian lyhyt
 
