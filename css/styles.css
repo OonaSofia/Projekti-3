@@ -18,7 +18,7 @@ body {
 main.container {
   max-width: 600px;
   margin: 60px auto;
-  background-color: rgb(255, 245, 169);
+  background-color: rgb(75, 134, 176);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
