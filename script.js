@@ -63,15 +63,15 @@ $(document).ready(function () {
       });
     });
 
-    // Lisätään napit nappialueeseen
+    // Lisää napit nappialueeseen
     nappiAlue.append(tehtyNappi);
     nappiAlue.append(poistaNappi);
 
-    // Lisätään teksti ja napit listaelementtiin
+    // Lisää tekstin ja napit listaelementtiin
     uusiTehtava.append(tehtavaTeksti);
     uusiTehtava.append(nappiAlue);
 
-    // Lisätään uusi tehtävä listaan
+    // uusi tehtävä listaan
     $("#list").append(uusiTehtava);
 
     // Näytetään uusi tehtävä pienellä efektillä
