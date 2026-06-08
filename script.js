@@ -28,19 +28,21 @@ $("#errorviesti").text("Tehtävän pitää olla vähintään 3 merkkiä!");
 valid = false;
     }
 
-    // Jos tarkistus epäonnistuu, tehtävää ei lisätä listaan
-  }
-  if (!valid) {
+// Jos tarkistus epäonnistuu, tehtävää ei lisätä listaan
+if (!valid) {
     return;
   }
 
-  let uusiTehtava = document.createElement("li");
+// Luodaan uusi listaelementti jQueryllä
+let uusiTehtava = $("<li></li>");
+uusiTehtava.addClass("list-group-item d-flex justify-content-between align-items-center");
 
-  // Luodaan tehtävän teksti ja lisätään siihen käyttäjän kirjoittama sisältö
-  let tehtavaTeksti = document.createElement("span");
-  tehtavaTeksti.innerText = tehtava;
+// Luodaan tehtävän teksti
+let tehtavaTeksti = $("<span></span>");
+tehtavaTeksti.text(tehtava);
 
-  //Luodaan tehty nappi
+// Luodaan nappien alue
+let nappiAlue = $("<div></div>");
 
   let tehtyNappi = document.createElement("button");
   tehtyNappi.innerText = "Tehty";
