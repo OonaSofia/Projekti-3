@@ -33,40 +33,34 @@ if (!valid) {
     return;
   }
 
-// Luodaan uusi listaelementti jQueryllä
+//uusi listaelementti jQueryllä
 let uusiTehtava = $("<li></li>");
 uusiTehtava.addClass("list-group-item d-flex justify-content-between align-items-center");
 
-// Luodaan tehtävän teksti
+//tehtävän teksti
 let tehtavaTeksti = $("<span></span>");
 tehtavaTeksti.text(tehtava);
 
-// Luodaan nappien alue
+//Napin alue
 let nappiAlue = $("<div></div>");
 
-  let tehtyNappi = document.createElement("button");
-  tehtyNappi.innerText = "Tehty";
-  tehtyNappi.type = "button";
-  tehtyNappi.className = "btn btn-success btn-sm ms-2";
+
+//Tehty-nappi
+let tehtyNappi = $("<button></button>");
+tehtyNappi.text("Tehty");
+tehtyNappi.addClass("btn btn-success btn-sm ms-2");
+
+// Poista-nappi
+let poistaNappi = $("<button></button>");
+poistaNappi.text("Poista");
+poistaNappi.addClass("btn btn-danger btn-sm ms-2");
 
 
-  tehtyNappi.onclick = function () {
-    tehtavaTeksti.style.textDecoration = "line-through";
-  };
+//Tehvän yliviivaus
+tehtyNappi.click(function () {
+tehtavaTeksti.css("text-decoration", "line-through");
+    });
 
-  //Luodaan poista nappi 
-  let poistaNappi = document.createElement("button");
-  poistaNappi.innerText = "Poista";
-  poistaNappi.type = "button";
-  poistaNappi.className = "btn btn-danger btn-sm ms-2";
-
-  poistaNappi.onclick = function () {
-    uusiTehtava.remove();
-  };
-
-  uusiTehtava.appendChild(tehtavaTeksti);
-  uusiTehtava.appendChild(tehtyNappi);
-  uusiTehtava.appendChild(poistaNappi);
 
     // Lisätään uusi tehtävä listaan
   document.getElementById("list").appendChild(uusiTehtava);
